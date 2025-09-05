@@ -1,5 +1,5 @@
 let tempo_trabalho = 5 ;
-let tempo_descanco = 5 ;
+let tempo_descanso = 5 ;
 let timer = tempo_trabalho;
 let fase= "trabalho";
 let rodando= false
@@ -32,7 +32,7 @@ function iniciar(){
 }
 
 function pausar() {
-    if (timerId != null) {
+    if (timerId !== null) {
         
         clearInterval(timerId)
         timerId = null
@@ -42,23 +42,22 @@ function pausar() {
 
     function tick(){
 
-
-
         let timerDiv = document.getElementById('timerDiv')
-        
+        display()   
         console.log(timer)
         timer = timer - 1 
-        display()
 
-        if (timer <= 0) {
-            if (fase == 'trabalho') {
+        if (timer < 0) {
+            if (fase === 'trabalho') {
                 fase = 'descanso'
-                timer = tempo_descanco
-            console.log('mudou para descanso') 
+                timer = tempo_descanso
+  
+
             }else{
                 fase = 'trabalho'
                 timer = tempo_trabalho
-                console.log('mudou para trabalho') 
+
+
             }
         }
 
@@ -71,7 +70,16 @@ function display() {
 
     let timerDiv = document.getElementById('timerDiv')
     timerDiv.textContent=minutos + ':' + segundos 
-    
+    if (!rodando && timerId === null) {
+        let status = document.getElementById('status')
+        status.textContent= 'Pomodoro'
+    }else if (fase != 'descanso') {
+        let status = document.getElementById('status')
+        status.textContent= 'Focus Time'
+    }else{
+        let status = document.getElementById('status')
+        status.textContent= 'Break Time'
+    }
 }
 
 

@@ -13,10 +13,30 @@
             cursor: pointer;
             border-radius: 5px;
         }   
+
+        nav{
+            margin: 0px;
+            display: flex;
+            background-color: #FF6347;     
+        }
+        img.logo{
+            max-height: 65px;
+            width: auto;
+            margin-right: 10px;
+        }
+
+
     </style>
 </head>
 <body>
-    <div id="timerDiv" onload="display"></div>
+    <nav id="navbar">
+        <img class="logo"  src="" alt="" srcset="pomodoroLogo.png">
+        <h1>Pomodoro</h1>
+
+        <span id="status">Pomodoro</span>
+    </nav>
+
+    <div id="timerDiv" ></div>
     <button id="botao" onclick=iniciaPausa()> Iniciar
     </button>
     <script src="js.js"></script>
