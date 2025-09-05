@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pomodoro</title>
     <style>
-                button {
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        button {
             background: #4CAF50;
             color: white;
             border: none;
@@ -18,11 +22,28 @@
             margin: 0px;
             display: flex;
             background-color: #FF6347;     
+            height: 65px;
+            align-items: center;
+            position: relative;
         }
         img.logo{
             max-height: 65px;
             width: auto;
             margin-right: 10px;
+            position: absolute;
+            left: 1%;
+        }
+        h1{
+            margin: 0;
+            left: 75px;
+            margin-left: 85px
+        }
+        #status{
+            margin: 0 10px;
+            color: white;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
 
@@ -30,10 +51,11 @@
 </head>
 <body>
     <nav id="navbar">
+        
         <img class="logo"  src="" alt="" srcset="pomodoroLogo.png">
         <h1>Pomodoro</h1>
 
-        <span id="status">Pomodoro</span>
+        <span class="status" id="status">Pomodoro</span>
     </nav>
 
     <div id="timerDiv" ></div>
