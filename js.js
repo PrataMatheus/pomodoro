@@ -70,17 +70,25 @@ function display() {
 
     let timerDiv = document.getElementById('timerDiv')
     timerDiv.textContent=minutos + ':' + segundos 
+    let status = document.getElementById('status')
     if (!rodando && timerId === null) {
-        let status = document.getElementById('status')
+        
         status.textContent= 'Pomodoro'
     }else if (fase != 'descanso') {
-        let status = document.getElementById('status')
+
+        document.body.className = 'trabalho';
         status.textContent= 'Focus Time'
     }else{
-        let status = document.getElementById('status')
+
+        document.body.className = 'descanso';
         status.textContent= 'Break Time'
     }
 }
+
+
+
+
+
 
 
 
